@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta title="Zaplanuj Wrocławski Szlak">
+        <meta description="Formularz zgłoszeniowy dla tras">
+        <meta name="author" content="Alex Rogoziński">
+        <meta name="keywords" content="Wrocław, szlaki, krasnale, turystyka, zwiedzanie">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>Zaplanuj własny szlak po Wrocławiu</h1>
+            <nav>
+                <a href="index.html">Powrót do Strony Głównej</a>
+            </nav>
+        </header>
+
+        <main>
+            <form>
+                <label for="#name">Imię:</label>
+                <input id="name" type="text"><br>
+
+                <label for="#email">Adres e-mail:</label>
+                <input id="email" type="email"><br>
+
+                <label for="#path">Nazwa trasy:</label>
+                <input id="path" type="text"><br>
+
+                <p>Sposób zwiedzania:</p>
+                <label for="#byfoot">Pieszo</label>
+                <input id="byfoot" name="visiting" value="foot" type="radio" checked>
+
+                <label id="#bybike">Rowerem</label>
+                <input id="bybike" name="visiting" value="bike" type="radio">
+
+                <label id="#bybus">Komunikacją miejską</label>
+                <input id="bybus" name="visiting" value="bus" type="radio">
+
+                <p>Co cię interesuje?</p>
+                <label for="#views">Widoki</label>
+                <input id="views" name="interests" value="views" type="checkbox">
+
+                <label for="#length">Długość trasy</label>
+                <input id="length" name="interests" value="length" type="checkbox">
+
+                <label for="#attractions">Ilość atrakcji</label>
+                <input id="attractions" name="interests" value="attractions" type="checkbox"><br><br>
+
+                <label for="#hours">Ile godzin chcesz poświęcić na wycieczkę?</label>
+                <input id="hours" type="number" min="0" placeholder="0"><br><br>
+
+                <label for="#desc">Opis planu wycieczki (max 200 znaków):</label><br>
+                <textarea id="#desc" rows="1" cols="200" maxlength="200" style="resize:none" placeholder="Opisz plan wycieczki..."></textarea><br><br>
+
+                <button type="reset">Wyczyść</button><br><br>
+                <button type="submit">Wyślij</button><br><br>
+            </form>
+        </main>
+
+        <footer>
+            &copy; 2025 Wrocławskie Szlaki Odkrywców. Wszelkie prawa zastrzeżone.
+        </footer>
+    </body>
+</html>
