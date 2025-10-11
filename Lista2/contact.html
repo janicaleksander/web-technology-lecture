@@ -18,15 +18,19 @@
 
         <main>
             <form>
+                <!--Name-->
                 <label for="#name">Imię:</label>
                 <input id="name" type="text"><br>
 
+                <!--E-mail address-->
                 <label for="#email">Adres e-mail:</label>
                 <input id="email" type="email"><br>
 
+                <!--Tour path name-->
                 <label for="#path">Nazwa trasy:</label>
                 <input id="path" type="text"><br>
 
+                <!--Way of touring-->
                 <p>Sposób zwiedzania:</p>
                 <label for="#byfoot">Pieszo</label>
                 <input id="byfoot" name="visiting" value="foot" type="radio" checked>
@@ -37,6 +41,7 @@
                 <label id="#bybus">Komunikacją miejską</label>
                 <input id="bybus" name="visiting" value="bus" type="radio">
 
+                <!--Interests-->
                 <p>Co cię interesuje?</p>
                 <label for="#views">Widoki</label>
                 <input id="views" name="interests" value="views" type="checkbox">
@@ -47,12 +52,15 @@
                 <label for="#attractions">Ilość atrakcji</label>
                 <input id="attractions" name="interests" value="attractions" type="checkbox"><br><br>
 
+                <!--Time required for the tour-->
                 <label for="#hours">Ile godzin chcesz poświęcić na wycieczkę?</label>
                 <input id="hours" type="number" min="0" placeholder="0"><br><br>
 
+                <!--Tour description-->
                 <label for="#desc">Opis planu wycieczki (max 200 znaków):</label><br>
                 <textarea id="#desc" rows="1" cols="200" maxlength="200" style="resize:none" placeholder="Opisz plan wycieczki..."></textarea><br><br>
 
+                <!--Reset and Submit buttons-->
                 <button type="reset">Wyczyść</button><br><br>
                 <button type="submit">Wyślij</button><br><br>
             </form>
