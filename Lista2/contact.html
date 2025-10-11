@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
     <head>
         <meta charset="utf-8">
-        <meta title="Zaplanuj Wrocławski Szlak">
-        <meta description="Formularz zgłoszeniowy dla tras">
+        <meta name="description" content="Formularz zgłoszeniowy dla tras">
         <meta name="author" content="Alex Rogoziński">
         <meta name="keywords" content="Wrocław, szlaki, krasnale, turystyka, zwiedzanie">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zaplanuj Wrocławski Szlak</title>
     </head>
     <body>
         <header>
@@ -19,46 +19,46 @@
         <main>
             <form>
                 <!--Name-->
-                <label for="#name">Imię:</label>
+                <label for="name">Imię:</label>
                 <input id="name" type="text"><br>
 
                 <!--E-mail address-->
-                <label for="#email">Adres e-mail:</label>
+                <label for="email">Adres e-mail:</label>
                 <input id="email" type="email"><br>
 
                 <!--Tour path name-->
-                <label for="#path">Nazwa trasy:</label>
+                <label for="path">Nazwa trasy:</label>
                 <input id="path" type="text"><br>
 
                 <!--Way of touring-->
                 <p>Sposób zwiedzania:</p>
-                <label for="#byfoot">Pieszo</label>
+                <label for="byfoot">Pieszo</label>
                 <input id="byfoot" name="visiting" value="foot" type="radio" checked>
 
-                <label id="#bybike">Rowerem</label>
+                <label for="bybike">Rowerem</label>
                 <input id="bybike" name="visiting" value="bike" type="radio">
 
-                <label id="#bybus">Komunikacją miejską</label>
+                <label for="bybus">Komunikacją miejską</label>
                 <input id="bybus" name="visiting" value="bus" type="radio">
 
                 <!--Interests-->
                 <p>Co cię interesuje?</p>
-                <label for="#views">Widoki</label>
+                <label for="views">Widoki</label>
                 <input id="views" name="interests" value="views" type="checkbox">
 
-                <label for="#length">Długość trasy</label>
+                <label for="length">Długość trasy</label>
                 <input id="length" name="interests" value="length" type="checkbox">
 
-                <label for="#attractions">Ilość atrakcji</label>
+                <label for="attractions">Ilość atrakcji</label>
                 <input id="attractions" name="interests" value="attractions" type="checkbox"><br><br>
 
                 <!--Time required for the tour-->
-                <label for="#hours">Ile godzin chcesz poświęcić na wycieczkę?</label>
+                <label for="hours">Ile godzin chcesz poświęcić na wycieczkę?</label>
                 <input id="hours" type="number" min="0" placeholder="0"><br><br>
 
                 <!--Tour description-->
-                <label for="#desc">Opis planu wycieczki (max 200 znaków):</label><br>
-                <textarea id="#desc" rows="1" cols="200" maxlength="200" style="resize:none" placeholder="Opisz plan wycieczki..."></textarea><br><br>
+                <label for="desc">Opis planu wycieczki (max 200 znaków):</label><br>
+                <textarea id="desc" rows="1" cols="200" maxlength="200" style="resize:none" placeholder="Opisz plan wycieczki..."></textarea><br><br>
 
                 <!--Reset and Submit buttons-->
                 <button type="reset">Wyczyść</button><br><br>
