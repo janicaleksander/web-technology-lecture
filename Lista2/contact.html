@@ -1,73 +1,142 @@
 <!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Formularz zgłoszeniowy dla tras">
-        <meta name="author" content="Alex Rogoziński">
-        <meta name="keywords" content="Wrocław, szlaki, krasnale, turystyka, zwiedzanie">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Zaplanuj Wrocławski Szlak</title>
-    </head>
-    <body>
-        <header>
-            <h1>Zaplanuj własny szlak po Wrocławiu</h1>
-            <nav>
-                <a href="index.html">Powrót do Strony Głównej</a>
-            </nav>
-        </header>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Formularz zgłoszeniowy dla tras">
+    <meta name="author" content="Alex Rogoziński">
+    <meta name="keywords" content="Wrocław, szlaki, krasnale, turystyka, zwiedzanie">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaplanuj Wrocławski Szlak</title>
+</head>
+<body>
+<header>
+    <h1>Zaplanuj własny szlak po Wrocławiu</h1>
+    <nav>
+        <a href="index.html">Powrót do Strony Głównej</a>
+    </nav>
+</header>
 
-        <main>
-            <form>
-                <!--Name-->
-                <label for="name">Imię:</label>
-                <input id="name" type="text"><br>
+<main>
+    <form action="#">
+        <!--Name-->
+        <label for="name">Imię:</label>
+        <input id="name" type="text"><br>
 
-                <!--E-mail address-->
-                <label for="email">Adres e-mail:</label>
-                <input id="email" type="email"><br>
+        <!--E-mail address-->
+        <label for="email">Adres e-mail:</label>
+        <input id="email" type="email"><br>
 
-                <!--Tour path name-->
-                <label for="path">Nazwa trasy:</label>
-                <input id="path" type="text"><br>
+        <!--Tour path name-->
+        <label for="path">Nazwa trasy:</label>
+        <input id="path" type="text"><br>
 
-                <!--Way of touring-->
-                <p>Sposób zwiedzania:</p>
-                <label for="byfoot">Pieszo</label>
-                <input id="byfoot" name="visiting" value="foot" type="radio" checked>
+        <!--Way of touring-->
+        <p>Sposób zwiedzania:</p>
+        <label for="byfoot">Pieszo</label>
+        <input id="byfoot" name="visiting" value="foot" type="radio" checked>
 
-                <label for="bybike">Rowerem</label>
-                <input id="bybike" name="visiting" value="bike" type="radio">
+        <label for="bybike">Rowerem</label>
+        <input id="bybike" name="visiting" value="bike" type="radio">
 
-                <label for="bybus">Komunikacją miejską</label>
-                <input id="bybus" name="visiting" value="bus" type="radio">
+        <label for="bybus">Komunikacją miejską</label>
+        <input id="bybus" name="visiting" value="bus" type="radio"><br><br>
 
-                <!--Interests-->
-                <p>Co cię interesuje?</p>
-                <label for="views">Widoki</label>
-                <input id="views" name="interests" value="views" type="checkbox">
+        <!--District selection (TOV)-->
+        <label for="district">Wybierz dzielnicę/osiedle:</label>
+        <select id="district" name="district">
+            <option value="">-- Wybierz --</option>
 
-                <label for="length">Długość trasy</label>
-                <input id="length" name="interests" value="length" type="checkbox">
+            <optgroup label="Fabryczna">
+                <option value="gajowice">Gajowice</option>
+                <option value="gadow-popowice-poludniowe">Gądów-Popowice Południowe</option>
+                <option value="grabiszyn-grabiszynek">Grabiszyn-Grabiszynek</option>
+                <option value="jerzmanowo">Jerzmanowo-Jarnołtów-Strachowice-Osiniec</option>
+                <option value="kuzniki">Kuźniki</option>
+                <option value="lesnica">Leśnica</option>
+                <option value="maslice">Maślice</option>
+                <option value="muchobor-maly">Muchobór Mały</option>
+                <option value="muchobor-wielki">Muchobór Wielki</option>
+                <option value="nowy-dwor">Nowy Dwór</option>
+                <option value="oporow">Oporów</option>
+                <option value="pilczyce">Pilczyce-Kozanów-Popowice Północne</option>
+                <option value="pracze">Pracze Odrzańskie</option>
+                <option value="zerniki">Żerniki</option>
+            </optgroup>
 
-                <label for="attractions">Ilość atrakcji</label>
-                <input id="attractions" name="interests" value="attractions" type="checkbox"><br><br>
+            <optgroup label="Krzyki">
+                <option value="bienkowice">Bieńkowice</option>
+                <option value="borek">Borek</option>
+                <option value="brochow">Brochów</option>
+                <option value="gaj">Gaj</option>
+                <option value="huby">Huby</option>
+                <option value="jagodno">Jagodno</option>
+                <option value="klecina">Klecina</option>
+                <option value="krzyki-partynice">Krzyki-Partynice</option>
+                <option value="ksieze">Księże</option>
+                <option value="oltaszyn">Ołtaszyn</option>
+                <option value="powstancow-slaskich">Powstańców Śląskich</option>
+                <option value="przedmiescie-olawskie">Przedmieście Oławskie</option>
+                <option value="tarnogaj">Tarnogaj</option>
+                <option value="wojszyce">Wojszyce</option>
+            </optgroup>
 
-                <!--Time required for the tour-->
-                <label for="hours">Ile godzin chcesz poświęcić na wycieczkę?</label>
-                <input id="hours" type="number" min="0" placeholder="0"><br><br>
+            <optgroup label="Psie Pole">
+                <option value="karlowice-rozanka">Karłowice-Różanka</option>
+                <option value="kleczkow">Kleczków</option>
+                <option value="kowale">Kowale</option>
+                <option value="lipa-piotrowska">Lipa Piotrowska</option>
+                <option value="osobowice-redzin">Osobowice-Rędzin</option>
+                <option value="pawlowice">Pawłowice</option>
+                <option value="polanowice">Polanowice-Poświętne-Ligota</option>
+                <option value="psie-pole">Psie Pole-Zawidawie</option>
+                <option value="soltysowice">Sołtysowice</option>
+                <option value="swojczyce">Swojczyce-Strachocin-Wojnów</option>
+                <option value="swiniary">Świniary</option>
+                <option value="widawa">Widawa</option>
+            </optgroup>
 
-                <!--Tour description-->
-                <label for="desc">Opis planu wycieczki (max 200 znaków):</label><br>
-                <textarea id="desc" rows="1" cols="200" maxlength="200" style="resize:none" placeholder="Opisz plan wycieczki..."></textarea><br><br>
+            <optgroup label="Stare Miasto">
+                <option value="przedmiescie-swidnickie">Przedmieście Świdnickie</option>
+                <option value="stare-miasto">Stare Miasto</option>
+                <option value="szczepin">Szczepin</option>
+            </optgroup>
 
-                <!--Reset and Submit buttons-->
-                <button type="reset">Wyczyść</button><br><br>
-                <button type="submit">Wyślij</button><br><br>
-            </form>
-        </main>
+            <optgroup label="Śródmieście">
+                <option value="biskupin-sepolno">Biskupin-Sępolno-Dąbie-Bartoszowice</option>
+                <option value="nadodrze">Nadodrze</option>
+                <option value="olbin">Ołbin</option>
+                <option value="plac-grunwaldzki">Plac Grunwaldzki</option>
+                <option value="zacisze">Zacisze-Zalesie-Szczytniki</option>
+            </optgroup>
+        </select><br><br>
 
-        <footer>
-            &copy; 2025 Wrocławskie Szlaki Odkrywców. Wszelkie prawa zastrzeżone.
-        </footer>
-    </body>
+        <!--Interests-->
+        <p>Co cię interesuje?</p>
+        <label for="views">Widoki</label>
+        <input id="views" name="interests" value="views" type="checkbox">
+
+        <label for="length">Długość trasy</label>
+        <input id="length" name="interests" value="length" type="checkbox">
+
+        <label for="attractions">Ilość atrakcji</label>
+        <input id="attractions" name="interests" value="attractions" type="checkbox"><br><br>
+
+        <!--Time required for the tour-->
+        <label for="hours">Ile godzin chcesz poświęcić na wycieczkę?</label>
+        <input id="hours" type="number" min="0" placeholder="0"><br><br>
+
+        <!--Tour description-->
+        <label for="desc">Opis planu wycieczki (max 200 znaków):</label><br>
+        <textarea id="desc" rows="1" cols="200" maxlength="200" style="resize:none" placeholder="Opisz plan wycieczki..."></textarea><br><br>
+
+        <!--Reset and Submit buttons-->
+        <button type="reset">Wyczyść</button><br><br>
+        <button type="submit">Wyślij</button><br><br>
+    </form>
+</main>
+
+<footer>
+    &copy; 2025 Wrocławskie Szlaki Odkrywców. Wszelkie prawa zastrzeżone.
+</footer>
+</body>
 </html>
