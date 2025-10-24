@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Poznaj Wrocław z innej strony!">
+    <meta name="author" content="Aleksander Janic">
+    <meta name="keywords" content="Wrocław, szlaki, krasnale, turystyka, zwiedzanie">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz osobowy</title>
+</head>
+<body>
+
+<h1>Formularz osobowy</h1>
+
+<aside>
+    <p><mark>Wskazówka:</mark> Wypełnij wszystkie pola zgodnie z podanym formatem po prawej stronie każdego pola.</p>
+</aside>
+
+<form action="#" method="post" autocomplete="on">
+    <p>
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" autofocus>
+        <span>np. Jan</span>
+    </p>
+
+    <p>
+        <label for="nazwisko">Nazwisko:</label>
+        <input type="text" id="nazwisko" name="nazwisko" required>
+        <span>np. Kowalski</span>
+    </p>
+
+    <p>
+        <label for="miesiac">Miesiąc urodzin:</label>
+        <input list="miesiace" id="miesiac" name="miesiac">
+        <datalist id="miesiace">
+            <option value="Styczeń">
+            <option value="Luty">
+            <option value="Marzec">
+            <option value="Kwiecień">
+            <option value="Maj">
+            <option value="Czerwiec">
+            <option value="Lipiec">
+            <option value="Sierpień">
+            <option value="Wrzesień">
+            <option value="Październik">
+            <option value="Listopad">
+            <option value="Grudzień">
+        </datalist>
+        <span>wybierz z listy</span>
+    </p>
+
+    <p>
+        <label for="email">Adres e-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <span>np. jan.kowalski@example.com</span>
+    </p>
+
+    <p>
+        <label for="telefon">Telefon:</label>
+        <input type="tel" id="telefon" name="telefon"
+               pattern="^\+\d{2}\s\d{3}-\d{3}-\d{3}$"
+               placeholder="+48 123-456-789">
+        <span>format: +XX XXX-XXX-XXX</span>
+    </p>
+
+    <details>
+        <summary>Dlaczego zbieramy te dane?</summary>
+        <p>Dane osobowe są potrzebne w celu kontaktu i przygotowania indywidualnej oferty turystycznej.</p>
+    </details>
+
+    <p>
+        <label for="postep">Postęp wypełniania:</label>
+        <meter id="postep" min="0" max="100" value="60">60%</meter>
+    </p>
+
+    <p><input type="submit" value="Wyślij formularz"></p>
+</form>
+
+<footer>
+    <p>Autor: Aleksander Janic &copy; 2025</p>
+    <p>Strona edukacyjna — poznaj Wrocław z innej strony!</p>
+</footer>
+
+</body>
+</html>
