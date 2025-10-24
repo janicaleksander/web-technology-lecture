@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dodatkowe informacje o użytkowniku">
+    <meta name="author" content="Aleksander Janic">
+    <meta name="keywords" content="formularz, kolor, miesiąc, zakres, wyszukiwanie, url">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodatkowe informacje o użytkowniku</title>
+</head>
+<body>
+
+<h1>Dodatkowe informacje o użytkowniku</h1>
+
+<aside>
+    <p><mark>Wskazówka:</mark> Pola zawierają szare podpowiedzi — wypełnij je własnymi danymi.</p>
+</aside>
+
+<form action="#" method="post" autocomplete="on">
+    <p>
+        <label for="ulubiony_kolor">Ulubiony kolor:</label>
+        <input type="color" id="ulubiony_kolor" name="ulubiony_kolor">
+        <span>Wybierz kolor, który najbardziej lubisz</span>
+    </p>
+
+    <p>
+        <label for="miesiac_wakacji">Ulubiony miesiąc wakacji:</label>
+        <input type="month" id="miesiac_wakacji" name="miesiac_wakacji">
+        <span>Wybierz miesiąc i rok</span>
+    </p>
+
+    <p>
+        <label for="poziom_zadowolenia">Poziom zadowolenia z życia:</label>
+        <input type="range" id="poziom_zadowolenia" name="poziom_zadowolenia" min="0" max="10" value="5">
+        <span>0 – niezadowolony, 10 – bardzo szczęśliwy</span>
+    </p>
+
+    <p>
+        <label for="wyszukaj">Wyszukaj zainteresowanie:</label>
+        <input type="search" id="wyszukaj" name="wyszukaj" placeholder="np. programowanie, sport, podróże">
+        <span>Wpisz, czego szukasz</span>
+    </p>
+
+    <p>
+        <label for="strona">Twoja ulubiona strona internetowa:</label>
+        <input type="url" id="strona" name="strona" placeholder="https://example.com">
+        <span>Podaj pełny adres URL</span>
+    </p>
+
+    <details>
+        <summary>Dlaczego zbieramy te dane?</summary>
+        <p>Dzięki tym informacjom możemy lepiej dopasować ofertę i zawartość strony do Twoich zainteresowań.</p>
+    </details>
+
+    <p>
+        <label for="postep">Postęp wypełniania:</label>
+        <meter id="postep" min="0" max="100" value="40">40%</meter>
+    </p>
+
+    <p><input type="submit" value="Zapisz informacje"></p>
+</form>
+
+<footer>
+    <p>Autor: Aleksander Janic &copy; 2025</p>
+    <p>Strona edukacyjna — formularz dodatkowych informacji o użytkowniku.</p>
+</footer>
+
+</body>
+</html>
