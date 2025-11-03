@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Poznaj Wrocław z innej strony!">
+    <meta name="author" content="Aleksander Janic">
+    <meta name="keywords" content="Wrocław, szlaki, krasnale, turystyka, zwiedzanie">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrocławskie Szlaki Odkrywców - stylowanie 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Demo Pseudoklas CSS</h1>
+
+    <!-- :hover, :link, :visited -->
+    <div class="section">
+        <h2>Linki</h2>
+        <a href="index.html">Link nieodwiedzony (:link, :hover)</a>
+        <a href="https://example.com">Link odwiedzony (:visited)</a>
+    </div>
+
+    <!-- :active, :focus, :enabled, :disabled, :required -->
+    <div class="section">
+        <h2>Przyciski i inputy</h2>
+        <button class="btn">Kliknij mnie (:active)</button>
+        <button class="btn" disabled>Wyłączony (:disabled)</button>
+        <br><br>
+        <label>
+            <input type="text" placeholder="Kliknij tu (:focus)">
+        </label>
+        <label>
+            <input type="text" required placeholder="Pole wymagane (:required)">
+        </label>
+    </div>
+
+    <!-- :checked -->
+    <div class="section">
+        <h2>Checkbox</h2>
+        <label>
+            <input type="checkbox"> Zaznacz mnie (:checked)
+        </label>
+    </div>
+
+    <!-- :first-child, :last-child, :nth-child, :nth-last-child -->
+    <div class="section">
+        <h2>Lista</h2>
+        <ul>
+            <li>Pierwszy (:first-child)</li>
+            <li>Drugi (:nth-child(2))</li>
+            <li>Trzeci (:nth-last-child(2))</li>
+            <li>Ostatni (:last-child)</li>
+        </ul>
+    </div>
+
+    <!-- :first-of-type, :last-of-type -->
+    <div class="section">
+        <h2>Paragrafy</h2>
+        <p>Pierwszy paragraf (:first-of-type)</p>
+        <p>Środkowy paragraf</p>
+        <p>Ostatni paragraf (:last-of-type)</p>
+    </div>
+
+    <!-- :only-child -->
+    <div class="section">
+        <h2>Tylko dziecko</h2>
+        <div class="parent">
+            <span>Jestem sam (:only-child)</span>
+        </div>
+    </div>
+
+    <!-- :empty -->
+    <div class="section">
+        <h2>Puste elementy</h2>
+        <div class="box"></div>
+        <div class="box">Ten nie jest pusty</div>
+    </div>
+
+    <!-- :not() -->
+    <div class="section">
+        <h2>Negacja</h2>
+        <p class="special">Specjalny paragraf</p>
+        <p>Zwykły paragraf (:not(.special))</p>
+    </div>
+
+    <!-- :target -->
+    <div class="section">
+        <h2>Target</h2>
+        <a href="#target-section">Kliknij aby podświetlić sekcję</a>
+        <div id="target-section" class="target-box">
+            Ta sekcja podświetla się po kliknięciu (:target)
+        </div>
+    </div>
+</div>
+</body>
+</html>
