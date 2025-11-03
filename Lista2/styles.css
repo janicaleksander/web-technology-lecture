@@ -1,0 +1,132 @@
+/* === OGÓLNE STYLE STRONY === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    margin: 0 0 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* === NAGŁÓWEK I STOPKA === */
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background: #003366;
+    color: #fff;
+}
+
+footer {
+    background: #222;
+    font-size: 14px;
+}
+
+/* === NAWIGACJA === */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffdd33;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00cc88;
+    text-decoration: underline;
+}
+
+/* === SEKCJE === */
+main section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* === PRZYKŁADY === */
+.px-example {
+    font-size: 18px;
+    background: #e8e8e8;
+    padding: 8px;
+    border-left: 5px solid #555;
+}
+
+.pt-example {
+    font-size: 14pt;
+    background: #dce5ff;
+    padding: 8px;
+    border-left: 5px solid #0044cc;
+}
+
+.em-parent-small { font-size: 16px; margin-bottom: 10px; }
+.em-parent-large { font-size: 20px; }
+
+.em-example {
+    font-size: 1.5em;
+    background: #e6fae6;
+    padding: 8px;
+    border-left: 5px solid #009900;
+}
+
+.percent-parent-small { font-size: 16px; margin-bottom: 10px; }
+.percent-parent-large { font-size: 20px; }
+
+.percent-example {
+    font-size: 120%;
+    background: #ffeaea;
+    padding: 8px;
+    border-left: 5px solid #cc0000;
+}
+
+
+/* === STRONA 2: TŁA === */
+.photos {
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg-color { background-color: #87CEEB; }
+.bg-repeat { background: url("assets/images/wroc-panorama.jpg") repeat; }
+.bg-no-repeat { background: url("assets/images/wroc-panorama.jpg") no-repeat top left; }
+.bg-position { background: url("assets/images/wroc-panorama.jpg") no-repeat center; }
+.bg-fixed { background: url("assets/images/wroc-panorama.jpg") fixed center/cover no-repeat; }
+.bg-cover { background: url("assets/images/wroc-panorama.jpg") center/cover no-repeat; }
+.bg-half {
+    background: url("assets/images/wroc-panorama.jpg") repeat-x top;
+    background-size: contain;
+    position: relative;
+}
+
+/* === DROBNE === */
+a {
+    color: #ffdd33;
+}
+
+a:hover {
+    color: #00cc88;
+}

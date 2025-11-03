@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jednostki rozmiarów – Wrocławskie Szlaki Odkrywców</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Wrocławskie Szlaki Odkrywców</h1>
+    <nav>
+        <a href="#px">px</a>
+        <a href="#pt">pt</a>
+        <a href="#em">em</a>
+        <a href="#percent">%</a>
+    </nav>
+</header>
+
+<main>
+    <section id="px">
+        <h2>Stałe wartości (px)</h2>
+        <p class="px-example">
+            (px) Tekst ma zawsze ten sam rozmiar niezależnie od powiększenia strony.
+        </p>
+    </section>
+
+    <section id="pt">
+        <h2>Wartości drukarskie (pt)</h2>
+        <p class="pt-example">
+            (pt) Jednostki drukarskie – najlepiej widoczne przy eksporcie do PDF.
+        </p>
+    </section>
+
+    <section id="em">
+        <h2>Skalowane względem rodzica (em)</h2>
+        <div class="em-parent-small">
+            <p class="em-example">(em) Rodzic 16px → 1.5em = 24px</p>
+        </div>
+        <div class="em-parent-large">
+            <p class="em-example">(em) Rodzic 20px → 1.5em = 30px</p>
+        </div>
+    </section>
+
+    <section id="percent">
+        <h2>Procenty (%)</h2>
+        <div class="percent-parent-small">
+            <p class="percent-example">(%) 120% z 16px = 19.2px</p>
+        </div>
+        <div class="percent-parent-large">
+            <p class="percent-example">(%) 120% z 20px = 24px</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Wrocławskie Szlaki Odkrywców
+</footer>
+</body>
+</html>
