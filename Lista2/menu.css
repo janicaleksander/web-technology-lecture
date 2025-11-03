@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
@@ -21,7 +20,7 @@ header {
 
 .menu > ul > li {
     display: inline-block;
-    position: relative;
+    position: relative; /* do niego odwołuje sie się absolute*/
 }
 
 .menu a {
@@ -35,7 +34,8 @@ header {
     background-color: #555;
 }
 
-/* === POZIOM 2 === */
+/*2 lvl */
+
 .menu ul ul {
     display: none;
     position: absolute;
@@ -45,20 +45,18 @@ header {
     min-width: 180px;
     z-index: 10;
 }
-
-/* === POZIOM 3 === */
+/*3 lvl */
 .menu ul ul ul {
     left: 100%;
     top: 0;
     background-color: #555;
 }
 
-/* Pokazanie podmenu po najechaniu */
+/* Pokazanie podmenu po najechaniu, bo przed jest niewidoczne, ale tutaj dzięki >, pokazujemy odpowiednie */
 .menu li:hover > ul {
     display: block;
 }
 
-/* Styl podkategorii */
 .menu ul ul li {
     display: block;
     border-bottom: 1px solid #555;
@@ -73,6 +71,4 @@ header {
     background-color: #666;
 }
 
-.menu li {
-    transition: background-color 0.3s ease;
-}
+

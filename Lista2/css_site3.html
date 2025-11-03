@@ -13,19 +13,38 @@
 <a id="top"></a>
 
 <main id="box-demo">
-    <!-- Box model i pozycjonowanie -->
     <div id="box-model-demo">
         <h2>Przykład box-model i pozycjonowania</h2>
-
+        <br>
         <div class="box static-box">Static Box</div>
         <div class="box relative-box">Relative Box</div>
         <div class="box absolute-box">Absolute Box</div>
         <div class="box fixed-box">Fixed Box</div>
-        <div class="box float-box">Float Box</div>
-        <div class="box clear-box">Clear Box</div>
+
+        <h3>Float i Clear w praktyce</h3>
+        <div class="float-demo">
+            <div class="box float-box">Float Box</div>
+            <p>
+                Ten tekst owija się wokół boxa po lewej stronie, ponieważ użyto <strong>float: left;</strong>.
+            </p><p>
+                Ten tekst owija się wokół boxa po lewej stronie, ponieważ użyto <strong>float: left;</strong>.
+            </p><p>
+                Ten tekst owija się wokół boxa po lewej stronie, ponieważ użyto <strong>float: left;</strong>.
+            </p><p>
+                Ten tekst owija się wokół boxa po lewej stronie, ponieważ użyto <strong>float: left;</strong>.
+            </p>
+            <div class="box clear-box">Clear Box</div>
+            <p>
+                Ten tekst zaczyna się poniżej, bo element z klasą <strong>clear-box</strong> ma ustawione
+                <strong>clear: left;</strong>
+            </p>
+        </div>
+        <div class="example-box">
+            To jest przykładowy box z obramowaniem.
+        </div>
     </div>
 
-    <!-- Selektory CSS -->
+
     <div id="selectors-demo">
         <h2>Przykład różnych selektorów CSS</h2>
 
@@ -37,12 +56,9 @@
             <p class="child">Paragraf z klasą "child" (selektor potomka)</p>
         </div>
     </div>
-    <div class="example-box">
-        To jest przykładowy box z obramowaniem.
-    </div>
+
     <br>
 
-    <!-- Tabela podstawowa -->
     <table class="basic-table">
         <tr>
             <th>Miejsce</th>
@@ -63,7 +79,6 @@
 
     <br>
 
-    <!-- Tabela zaokrąglona z efektem -->
     <table class="rounded-table">
         <tr>
             <th>Miejsce</th>
