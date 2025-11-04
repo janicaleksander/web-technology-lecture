@@ -7,6 +7,8 @@
     <meta name="keywords" content="Wrocław, szlaki, krasnale, turystyka, zwiedzanie">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wrocławskie Szlaki Odkrywców</title>
+    <!--External JS demonstration-->
+    <script src="script.js" defer></script>
 </head>
 <body>
 <a id="top"></a>
@@ -27,7 +29,8 @@
         <a href="#intro">Poznaj Wrocław z innej strony!</a><br>
         <a href="#basic-info">Podstawowe informacje o Wrocławiu</a><br>
         <a href="#images">Panorama Wrocławia</a><br>
-        <a href="#contact-info">Kontakt</a>
+        <a href="#contact-info">Kontakt</a><br>
+        <a href="#js-demo">Demonstracja JS</a>
     </nav>
 </header>
 
@@ -160,6 +163,17 @@
                 <a href="contact.html" target="_blank">Zgłaszanie tras</a>
             </p>
         </section>
+
+        <!--Inline JavaScript demonstration-->
+        <section id="js-demo">
+            <h3>Demonstracja JavaScript</h3>
+
+            <button onclick="window.alert('To jest własnie ta interaktywność!')">Kliknij, aby zobaczyć efekt</button><br><br>
+            <button onclick="askForNameAndDisplay()">Kliknij, aby dodać swoje imię na stronę</button><br><br>
+
+            <p id="clickCounter" class="changableParagraph">Licznik kliknięć: 0</p><br>
+            <button id="demoButtonJS" onclick="countClicks()">Kliknij, aby zwiększyć licznik</button><br><br>
+        </section>
     </article>
 </main>
 
@@ -167,6 +181,16 @@
     <a href="#top">Powrót na górę strony</a><br><br>
     &copy; 2025 Wrocławskie Szlaki Odkrywców. Wszelkie prawa zastrzeżone.
 </footer>
+
+<!--Internal JS demonstration-->
+<script>
+    function askForNameAndDisplay() {
+        let name = window.prompt("Podaj swoje imię:");
+
+        if (name) document.writeln("Witaj, " + name + "!");
+        else      document.writeln("Witaj, nieznajomy!");
+    }
+</script>
 
 </body>
 </html>

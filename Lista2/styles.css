@@ -365,3 +365,34 @@ ul li:last-child {
 .section:last-child {
     border-color: blue;
 }
+
+.demoButtonJS {
+    margin: 0 auto;
+    display: block;
+    border-radius: 10%;
+    background-color: #7fb9f3;
+    font-size: large;
+    font-weight: 800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: #0044cc;
+    height: 50px;
+}
+
+p.changableParagraph {
+    text-align: center;
+    font-size: larger;
+    color: #555;
+}
+
+p.loopTestParagraph {
+    font-size: larger;
+    font-weight: bolder;
+    color: #e42020;
+}
+
+#loopButton {
+    font-size: medium;
+    color: #87CEEB;
+    background-color: #009900;
+    border-radius: 15%;
+}
