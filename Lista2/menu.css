@@ -1,0 +1,74 @@
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+.menu > ul > li {
+    display: inline-block;
+    position: relative; /* do niego odwołuje sie się absolute*/
+}
+
+.menu a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+/*2 lvl */
+
+.menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%; /*jest to aby przesunac od rodzica w dół o wysokosc rodzica*/
+    left: 0;
+    background-color: #444;
+    min-width: 180px;
+    z-index: 10;/* ma priorytet 10 i dopiero 11 może go nadpisać na stronie*/
+}
+/*3 lvl */
+.menu ul ul ul {
+    left: 100%; /*to jest aby przesunać od rodzica cała szerokosc rodzica aby byl idealnie po prawo*/
+    top: 0;
+    background-color: #555;
+}
+
+/* Pokazanie podmenu po najechaniu, bo przed jest niewidoczne, ale tutaj dzięki >, pokazujemy odpowiednie */
+.menu li:hover > ul {
+    display: block;
+}
+
+.menu ul ul li {
+    display: block;
+    border-bottom: 1px solid #555;
+}
+
+.menu ul ul li a {
+    color: #fff;
+    padding: 10px;
+}
+
+.menu ul ul li a:hover {
+    background-color: #666;
+}
+
+
