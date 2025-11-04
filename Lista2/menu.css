@@ -39,15 +39,15 @@ header {
 .menu ul ul {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /*jest to aby przesunac od rodzica w dół o wysokosc rodzica*/
     left: 0;
     background-color: #444;
     min-width: 180px;
-    z-index: 10;
+    z-index: 10;/* ma priorytet 10 i dopiero 11 może go nadpisać na stronie*/
 }
 /*3 lvl */
 .menu ul ul ul {
-    left: 100%;
+    left: 100%; /*to jest aby przesunać od rodzica cała szerokosc rodzica aby byl idealnie po prawo*/
     top: 0;
     background-color: #555;
 }
