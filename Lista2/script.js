@@ -95,7 +95,7 @@ function testLoops() {
 
     // Test for loop
     let forTestResult = "For...";
-    for (let i = 0; i < iterations; i++) {
+    for (var i = 0; i < iterations; i++) {
         forTestResult += ` ${i}`;
     }
     document.getElementById("forPar").innerHTML = forTestResult;
