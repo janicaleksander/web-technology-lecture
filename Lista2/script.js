@@ -36,7 +36,7 @@ function countClicks() {
 /**
  * Adds numbers given by user via window.prompt() and displays sum of 
  * all number provided by user during the session.
- * Demonstrates usage of `window.prompt()`, `window.alert()`, 
+ * Demonstrates usage of `window.prompt()`, `window.alert()`, `parseFloat()`,
  * `.innerHTML` and `Math.round()`.
  * @returns {void}
  */
@@ -58,7 +58,7 @@ function addNumbers() {
 
 /**
  * Returns random number within the [1-100] range.
- * Demonstrates usage of `Math.floor()`.
+ * Demonstrates usage of `Math.floor()` and `Math.random()`.
  * @returns {number}
  */
 function getRandomNumber() {   
