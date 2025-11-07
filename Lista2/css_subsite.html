@@ -31,6 +31,8 @@
         }
 
     </style>
+
+    <script src="script.js"></script>
 </head>
 <body>
 <a id="top"></a>
@@ -43,6 +45,8 @@
             <li><a href="css_site2.html">Stylowanie 2</a></li>
             <li><a href="css_site3.html">Stylowanie 3</a></li>
             <li><a href="css_site4.html">Stylowanie 4</a></li>
+            <li><a href="menu.html">Menu wielopoziomowe</a></li>
+            <li><a href="index.html">Powrót na stronę główną</a></li>
         </ul>
     </nav>
 </header>
@@ -102,6 +106,27 @@
 
         <input type="submit" value="Wyślij">
     </form>
+
+    <!--JavaScript demo section-->
+    <h3>Sekcja demonstracji JavaScript</h3>
+
+    <p id="clickCounter" class="changableParagraph">Licznik kliknięć: 0</p>
+    <button class="demoButtonJS" onclick="countClicks()">Kliknij, aby zwiększyć licznik</button>
+    
+    <p id="promptCounter" class="changableParagraph">Suma wszystkich podanych liczb: 0</p>
+    <button class="demoButtonJS" onclick="addNumbers()">Kliknij, aby dodać liczby</button>
+
+    <p id="randomGenerator" class="changableParagraph">Wylosowana liczba:  </p>
+    <button id="randomButton" class="demoButtonJS">Kliknij, aby wylosować liczbę</button>
+
+    <p id="voivodeshipsCount" class="changableParagraph">Ile jest województw w Polsce?</p>
+    <button id="voivodeshipsCountButton" class="demoButtonJS" onclick="checkVoivodeshipNumber()">Kliknij, aby sprawdzić swoją wiedzę</button>
+
+    <h4>Test pętli</h4>
+    <button id="loopButton" onclick="testLoops()">Kliknij, aby przeprowadzić test pętli</button>
+    <p id="whilePar" class="loopTestParagraph">While...</p>
+    <p id="doWhilePar" class="loopTestParagraph">Do...While...</p>
+    <p id="forPar" class="loopTestParagraph">For...</p> 
 </main>
 
 <footer>
