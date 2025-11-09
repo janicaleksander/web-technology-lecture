@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sumowanie liczb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/scripts/games.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .form { max-width: 320px; margin: auto; text-align: center; }
+        input, button { margin: 5px; padding: 8px; }
+        p { font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="form">
+    <label for="nCount">Set N :</label><br>
+    <input type="number" id="nCount" placeholder="E.g. 5"><br>
+    <button onclick="startSumming()">Start</button>
+    <hr>
+    <div id="numberInputSection" style="display: none;">
+        <label for="nextNumber">Type a number:</label><br>
+        <input type="number" id="nextNumber" placeholder="Enter a number">
+        <button onclick="addNumber()">OK</button>
+        <p id="progressText"></p>
+        <p id="sumResult"></p>
+    </div>
+</div>
+</body>
+</html>

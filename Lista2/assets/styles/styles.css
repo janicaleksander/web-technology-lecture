@@ -111,13 +111,13 @@ main section {
 }
 
 .bg-color { background-color: #87CEEB; height: 600px }
-.bg-repeat { background: url("assets/images/small.jpg") repeat; height: 600px}
-.bg-no-repeat { background: url("assets/images/small.jpg") no-repeat top left;height: 600px }
-.bg-position { background: url("assets/images/small.jpg") no-repeat center;height: 600px }
-.bg-fixed { background: url("assets/images/small.jpg") fixed center/cover no-repeat; height: 600px}
-.bg-cover { background: url("assets/images/small.jpg") center/cover no-repeat;height: 600px }
+.bg-repeat { background: url("../images/small.jpg") repeat; height: 600px}
+.bg-no-repeat { background: url("../images/small.jpg") no-repeat top left;height: 600px }
+.bg-position { background: url("../images/small.jpg") no-repeat center;height: 600px }
+.bg-fixed { background: url("../images/small.jpg") fixed center/cover no-repeat; height: 600px}
+.bg-cover { background: url("../images/small.jpg") center/cover no-repeat;height: 600px }
 .bg-half {
-    background: url("assets/images/small.jpg") repeat-x top;
+    background: url("../images/small.jpg") repeat-x top;
     height: 600px
 }
 
@@ -395,4 +395,11 @@ p.loopTestParagraph {
     color: #87CEEB;
     background-color: #009900;
     border-radius: 15%;
+}
+
+#gamelist{
+ text-align: center;
+}
+#gamelist a{
+    color: black;
 }

@@ -15,8 +15,8 @@ let promptSum  = 0;
 // -----------------------------------------------------------------------------
 window.addEventListener("load", function() {
     window.alert("Strona załadowana pomyślnie.");
+    writeWelcomeMessage();
 });
-
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("randomButton").addEventListener("click", getRandomNumber);
 })
@@ -131,5 +131,40 @@ function checkVoivodeshipNumber() {
  * @returns {boolean}
  */
 function isNumberValid(num) {
-    return isNaN(num) || num.length == 0;
+    return isNaN(num) || num.length === 0;
+}
+/**
+ * Demonstrates usage of document.writeln().
+ * Writes a welcome message directly to the HTML document.
+ * @returns {void}
+ */
+
+
+function writeWelcomeMessage() {
+    let name = window.prompt("Podaj swoje imię:");
+
+    // Otwórz nową zakładkę/okno
+    let newWindow = window.open('', '_blank');
+
+    // Napisz na nowej stronie
+    newWindow.document.open();
+    newWindow.document.writeln('<!DOCTYPE html>');
+    newWindow.document.writeln('<html lang="pl">');
+    newWindow.document.writeln('<head>');
+    newWindow.document.writeln('<meta charset="UTF-8">');
+    newWindow.document.writeln('<title>Powitanie</title>');
+    newWindow.document.writeln('</head>');
+    newWindow.document.writeln('<body>');
+    newWindow.document.writeln('<h1>Wrocławskie Szlaki Odkrywców</h1>');
+
+    if (name) {
+        newWindow.document.writeln('<p>Witaj, ' + name + '!</p>');
+    } else {
+        newWindow.document.writeln('<p>Witaj, nieznajomy!</p>');
+    }
+
+    newWindow.document.writeln('<p><a href="javascript:window.close()">Zamknij to okno</a></p>');
+    newWindow.document.writeln('</body>');
+    newWindow.document.writeln('</html>');
+    newWindow.document.close();
 }
