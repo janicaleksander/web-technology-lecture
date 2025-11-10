@@ -403,3 +403,40 @@ p.loopTestParagraph {
 #gamelist a{
     color: black;
 }
+
+#JSlist2Part1 {
+    width: 30%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.JSlist2Button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #d9ef38;
+    font-size: large;
+    font-weight: 800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid #000;
+    height: 50px;
+    width: 375px;
+}
+
+.JSlistHeader {
+    font-size: x-large;
+}
+
+#krasnalImage {
+    margin: 40px auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 500px;
+}
+
+.styleChangerLabel {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: block;
+}
