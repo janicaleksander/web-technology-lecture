@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addEventListenerToInput("textColor", changeFontColor);
 
     addEventListenerSpecifyType("change", "fontKind", changeFontFamily);
-})
+});
 
 // -----------------------------------------------------------------------------
 // Functions
@@ -79,7 +79,7 @@ function replaceElemFirst() {
 function removeElemLast() {
     const list = getDemoList();
     const last = list.lastElementChild;
-    if (last) list.removeChild(list.lastElementChild);
+    if (last) { list.removeChild(list.lastElementChild); }
 }
 
 /**

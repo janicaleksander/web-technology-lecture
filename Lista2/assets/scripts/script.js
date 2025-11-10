@@ -25,7 +25,7 @@ window.addEventListener("load", function() {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("randomButton").addEventListener("click", getRandomNumber);
-})
+});
 
 // -----------------------------------------------------------------------------
 // Functions
