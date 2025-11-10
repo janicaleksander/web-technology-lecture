@@ -1,3 +1,8 @@
+/**
+ ******************************************************************************* 
+ * JS List 01
+ *******************************************************************************
+ */
 
 // -----------------------------------------------------------------------------
 // Constants
@@ -17,6 +22,7 @@ window.addEventListener("load", function() {
     window.alert("Strona załadowana pomyślnie.");
     writeWelcomeMessage();
 });
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("randomButton").addEventListener("click", getRandomNumber);
 })
@@ -25,8 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // Functions
 // -----------------------------------------------------------------------------
 /**
- * Counts clicks.
- * Demonstrates usage of `document.getElementById()` and `.innerHTML`.
+ * @description Counts clicks.
+ *              Demonstrates usage of `document.getElementById()` 
+ *              and `.innerHTML`.
+ * @function countClicks
  * @returns {void}
  */
 function countClicks() { 
@@ -34,10 +42,11 @@ function countClicks() {
 }
 
 /**
- * Adds numbers given by user via window.prompt() and displays sum of 
- * all number provided by user during the session.
- * Demonstrates usage of `window.prompt()`, `window.alert()`, `parseFloat()`,
- * `.innerHTML` and `Math.round()`.
+ * @description Adds numbers given by user via window.prompt() and displays sum of 
+ *              all number provided by user during the session.
+ *              Demonstrates usage of `window.prompt()`, `window.alert()`, 
+ *              `parseFloat()`, `.innerHTML` and `Math.round()`.
+ * @function addNumbers
  * @returns {void}
  */
 function addNumbers() {
@@ -57,8 +66,9 @@ function addNumbers() {
 }
 
 /**
- * Returns random number within the [1-100] range.
- * Demonstrates usage of `Math.floor()` and `Math.random()`.
+ * @description Returns random number within the [1-100] range.
+ *              Demonstrates usage of `Math.floor()` and `Math.random()`.
+ * @function getRandomNumber
  * @returns {number}
  */
 function getRandomNumber() {   
@@ -68,7 +78,8 @@ function getRandomNumber() {
 }
 
 /**
- * Demonstrates usage of loops: `while`, `do-while` and `for`.
+ * @description Demonstrates usage of loops: `while`, `do-while` and `for`.
+ * @function testLoops
  * @returns {void}
  */
 function testLoops() {
@@ -95,16 +106,17 @@ function testLoops() {
 
     // Test for loop
     let forTestResult = "For...";
-    for (var i = 0; i < iterations; i++) {
+    for (let i = 0; i < iterations; i++) {
         forTestResult += ` ${i}`;
     }
     document.getElementById("forPar").innerHTML = forTestResult;
 }
 
 /**
- * Displays alert message with response to the question about 
- * the number of voivodeships in Poland.
- * Demonstrates usage of `switch-case` and `parseInt()`.
+ * @description Displays alert message with response to the question about 
+ *              the number of voivodeships in Poland.
+ *              Demonstrates usage of `switch-case` and `parseInt()`.
+ * @function checkVoivodeshipNumber
  * @returns {void}
  */
 function checkVoivodeshipNumber() {
@@ -126,20 +138,21 @@ function checkVoivodeshipNumber() {
 // Utility functions
 // -----------------------------------------------------------------------------
 /**
- * Checks if given number is valid.
- * @param {number} num 
+ * @description Checks if given number is valid.
+ * @function isNumberValid
+ * @param {number} num A number to validate.
  * @returns {boolean}
  */
 function isNumberValid(num) {
     return isNaN(num) || num.length === 0;
 }
+
 /**
- * Demonstrates usage of document.writeln().
- * Writes a welcome message directly to the HTML document.
+ * @description Demonstrates usage of `document.writeln()`.
+ *              Writes a welcome message directly to the HTML document.
+ * @function writeWelcomeMessage
  * @returns {void}
  */
-
-
 function writeWelcomeMessage() {
     let name = window.prompt("Podaj swoje imię:");
 
