@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!--
+********************************************************************************
+@file           : fragment/menu.html
+@author         : Alex Rogoziński
+@brief          : Menu template file to be used in other views.
+********************************************************************************
+-->
+
+<html xmlns:th="http://www.thymeleaf.org en">
+<head>
+    <meta charset="html/text, UTF-8">
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+</head>
+<body>
+    <div th:fragment="menu" class="py-3 mt-auto bg-light text-center">
+        <h1>Tabela produktów</h1>
+        
+        <nav class="d-flex justify-content-center gap-3">
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/product/">Strona główna</a></li>
+                <li class="nav-item"><a class="nav-link" href="/product/add">Dodaj produkt</a></li>
+                <li class="nav-item"><a class="btn btn-primary" href="/product/seed">Dodaj przykładowe</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

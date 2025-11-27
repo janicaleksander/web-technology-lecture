@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!--
+********************************************************************************
+@file           : product/index.html
+@author         : Alex Rogoziński
+@brief          : Main project view. Displays list of products and allows to 
+                  perform operations on it.
+********************************************************************************
+-->
+
+<html xmlns:th="http://www.thymeleaf.org en">
+<head>
+    <meta charset="html/text, UTF-8">
+    <title>Produkty</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+</head>
+<body>
+    <header th:replace="~{fragment/menu::menu}"></header> 
+
+    <main>
+        <div class="d-flex justify-content-center table-responsive">
+            <table class="display table table-bordered w-100">
+                <thead class="text-center">
+                    <tr>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Nazwa produktu</th>
+                        <th class="text-center">Waga [kg]</th>
+                        <th class="text-center">Cena [PLN]</th>
+                        <th class="text-center" colspan="3">Akcja</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="product : ${products}">
+                        <td class="text-center"th:text= "${product.getId()}"></td>
+                        <td class="text-center"th:text= "${product.getName()}"></td>
+                        <td class="text-center" th:text= "${product.getWeight()}"></td>
+                        <td class="text-center" th:text= "${product.getPrice()}"></td>
+                        <td class="text-center"><a class="btn btn-info" th:href="@{/product/details(id=${product.getId()})}">Szczegóły</a></td>
+                        <td class="text-center"><a class="btn btn-primary" th:href="@{/product/edit(id=${product.getId()})}">Edycja</a></td>
+                        <td class="text-center"><a class="btn btn-danger" th:href="@{/product/remove(id=${product.getId()})}">Usuwanie</a></td>
+                    </tr>   
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div th:replace="~{fragment/layout::footer}">
+            <p>&copy; Alex Rogoziński 2025</p>
+        </div>
+    </footer> 
+</body>
+</html>
