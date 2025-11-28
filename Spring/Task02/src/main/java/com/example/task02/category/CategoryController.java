@@ -1,6 +1,5 @@
-package com.example.task02;
+package com.example.task02.category;
 
-import jakarta.validation.Path;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -77,17 +76,5 @@ public class CategoryController {
         return "redirect:/category";
     }
 
-/*    @PostMapping
-    public String createCategory(
-            @Valid @ModelAttribute Category c,
-            BindingResult result,
-            Model model,
-            RedirectAttributes redirectAttributes){
-        if (result.hasErrors()){
-            return "///";
-        }
-        Category category = categoryService.createCategory(c);
-        return "";
-    }*/
 
 }

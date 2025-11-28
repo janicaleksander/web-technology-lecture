@@ -9,13 +9,14 @@
 </head>
 <body>
 
-<div class="containr mt-5">
+<div class="container mt-5">
     <div th:replace="fragement/nav :: nav"></div>
     <h1>Edycja kategorii: <span th:text="${category.name}"></span></h1>
     <div th:if="${exceptionError}" class="alert alert-danger" role="alert">
         <p th:text="${exceptionError}"></p>
     </div>
-    <form th:object="${category}" method="post">
+    <form th:action="@{/category/edit/{id}(id=${category.id})}"
+          th:object="${category}" method="post">
         <div class="form-group">
             <label for="name"> Nazwa kategorii:</label>
             <input

@@ -1,7 +1,6 @@
-package com.example.task02;
+package com.example.task02.category;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;

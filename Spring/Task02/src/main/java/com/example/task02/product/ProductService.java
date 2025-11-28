@@ -1,23 +1,27 @@
-package com.example.task02;
+package com.example.task02.product;
 
 
+import com.example.task02.exception.BusinessException;
+import com.example.task02.category.Category;
+import com.example.task02.category.CategoryRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductService {
-    @Autowired
+    final
     ProductRepository productRepository;
-    
-    @Autowired
+    final
     CategoryRepository categoryRepository;
-    public ProductService(){
+    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository){
 
+        this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     @Transactional
@@ -53,7 +57,12 @@ public class ProductService {
         productToUpdate.setPrice(p.getPrice());
         productToUpdate.setProductIdx(p.getProductIdx());
         productToUpdate.setCategory(p.getCategory());
-        return productRepository.save(productToUpdate);
+        try {
+            productRepository.saveAndFlush(productToUpdate);
+        }catch (DataIntegrityViolationException e){
+            throw new BusinessException("Error with updating");
+        }
+        return productToUpdate;
     }
 
     @Transactional
@@ -62,8 +71,14 @@ public class ProductService {
                 .orElseThrow(() -> new BusinessException("Category with id " + id + " does not exists"));
         productRepository.delete(productToDelete);
     }
+    public List<Product> getAllProducts(){
+        return productRepository.findAll();
+    }
+    public List<Category> getAllCategories() {
+        return categoryRepository.findAll();
+    }
 
-    /*@PostConstruct
+/*    @PostConstruct
     public void seed(){
         if (
                 !productRepository.existsById(1) &&
@@ -97,5 +112,5 @@ public class ProductService {
 
         }
     }
-    */
+ */
 }

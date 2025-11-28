@@ -1,6 +1,7 @@
-package com.example.task02;
+package com.example.task02.category;
 
 
+import com.example.task02.exception.BusinessException;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -56,7 +56,7 @@ public class CategoryService {
         try{
             categoryRepository.saveAndFlush(categoryToUpdate);
         }catch (DataIntegrityViolationException e){
-            throw new BusinessException("Undefined error: " + "probably you are trying to save existing name/code");
+            throw new BusinessException("Error: " + "probably you are trying to save existing name/code");
         }
         return categoryToUpdate;
     }

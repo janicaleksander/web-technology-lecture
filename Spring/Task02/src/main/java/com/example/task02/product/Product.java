@@ -1,10 +1,9 @@
-package com.example.task02;
+package com.example.task02.product;
 
+import com.example.task02.category.Category;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
-
-import java.util.Objects;
 
 @Entity
 @Table(name = "produkt")
@@ -20,24 +19,24 @@ public class Product {
     private String name;
 
     @Column(name="waga",nullable = false)
-    @NotBlank
+    @NotNull
     @Positive
     private double weight;
 
 
     @Column(name="cena",nullable = false)
-    @NotBlank
+    @NotNull
     @Positive
     private double price;
 
     @Column(name="indeks_produktu",nullable = false)
-    @NotBlank
+    @NotNull
     @Positive
     private Integer productIdx;
 
     @ManyToOne
     @JoinColumn(name = "kategoria",nullable = false)
-    @NotBlank
+    @NotNull
     private Category category;
 
     public Product() {

@@ -1,4 +1,4 @@
-package com.example.task02;
+package com.example.task02.category;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

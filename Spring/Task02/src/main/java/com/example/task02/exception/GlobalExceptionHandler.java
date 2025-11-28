@@ -1,6 +1,7 @@
-package com.example.task02;
+package com.example.task02.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,5 +20,10 @@ public class GlobalExceptionHandler {
         String referer = request.getHeader("Referer");
 
         return new RedirectView(referer != null ? referer : "/");
+    }
+    @ExceptionHandler(Exception.class)
+    public String handleGenericException(Exception ex, Model model) {
+        model.addAttribute("exceptionError", "Wystąpił nieoczekiwany błąd: " + ex.getMessage());
+        return "error";
     }
 }
