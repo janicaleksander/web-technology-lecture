@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Kategorie</title>
+</head>
+<body>
+<div class="container mt-4">
+    <div th:replace="fragement/nav :: nav"></div>
+
+    <div th:if="${success}" class="alert alert-success" role="alert">
+        <p th:text="${success}"></p>
+    </div>
+    <h1>Lista dostępnych kategorii</h1>
+    <a class="btn btn-primary mb-3" th:href="@{/category/new}">Dodaj nową kategorię</a>
+
+    <div class="content">
+        <table class="table table-bordered">
+            <thead class="thead-light text-center">
+            <tr>
+                <th class="text-right">ID</th>
+                <th class="text-left">NAZWA</th>
+                <th class="text-left">KOD</th>
+                <th class="text-center" colspan="2">AKCJE</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="category : ${categories}">
+                <td class="text-right" th:text="${category.id}"></td>
+                <td class="text-left" th:text="${category.name}"></td>
+                <td class="text-left" th:text="${category.code}"></td>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-primary" th:href="@{/category/edit/{id}(id=${category.id})}">Edytuj</a>
+                </td>
+                <td class="text-center">
+                    <form th:action="@{/category/delete/{id}(id=${category.id})}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Do you want to really delete it?')">
+                            Usuń
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

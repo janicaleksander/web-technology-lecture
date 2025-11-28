@@ -1,12 +1,11 @@
 CREATE TABLE IF NOT EXISTS kategoria(
-                                        ID INT,
+                                        ID SERIAL,
                                         nazwa VARCHAR(255) UNIQUE NOT NULL,
                                         kod VARCHAR(255) UNIQUE NOT NULL,
                                         CONSTRAINT kategoria_pk PRIMARY KEY(id)
 );
-
 CREATE TABLE IF NOT EXISTS produkt(
-                                      ID INT,
+                                      ID SERIAL,
                                       nazwa varchar(255) NOT NULL,
                                       waga FLOAT NOT NULL CHECK ( waga > 0),
                                       cena FLOAT NOT NULL CHECK ( cena > 0),
