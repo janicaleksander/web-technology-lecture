@@ -35,12 +35,12 @@
 
                 <div class="mb-3">
                     <label class="form-label">Waga:</label>
-                    <input type="number" th:field="*{weight}" class="form-control" step="0.01">
+                    <input type="number" th:field="*{weight}" class="form-control" step="0.01" min="0">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Cena:</label>
-                    <input type="number" th:field="*{price}" class="form-control" step="0.01">
+                    <input type="number" th:field="*{price}" class="form-control" step="0.01" min="0">
                 </div>
 
                 <div class="mb-3">
