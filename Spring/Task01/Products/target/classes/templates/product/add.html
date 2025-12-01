@@ -24,7 +24,7 @@
             <form th:action="@{/product/add}" th:object="${product}" method="post" class="col-md-6">
                 <div class="mb-3">
                     <label class="form-label">Nazwa:</label>
-                    <input type="text" th:field="*{name}" class="form-control" placeholder="Wpisz nazwę produktu...">
+                    <input type="text" th:field="*{name}" class="form-control" required placeholder="Wpisz nazwę produktu...">
                 </div>
 
                 <div class="mb-3">
@@ -39,7 +39,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Kategoria:</label>
-                    <input type="text" th:field="*{category}" class="form-control" placeholder="Wpisz kategorię produktu">
+                    <input type="text" th:field="*{category}" class="form-control" required placeholder="Wpisz kategorię produktu">
                 </div>
 
                 <button type="submit" class="btn btn-success">Dodaj</button>
