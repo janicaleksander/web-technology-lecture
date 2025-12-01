@@ -47,6 +47,10 @@
                     <label class="form-label">Kategoria:</label>
                     <input type="text" th:field="*{category}" class="form-control" required placeholder="Wpisz kategorię produktu...">
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">Indeks:</label>
+                    <input type="number" th:field="*{productIdx}" class="form-control" required placeholder="Wpisz indeks produktu..." min="0" step="1">
+                </div>
 
                 <button type="submit" class="btn btn-success">Zapisz zmiany</button>
                 <button type="reset" class="btn btn-secondary">Wyczyść</button>
