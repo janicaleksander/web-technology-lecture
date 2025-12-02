@@ -58,7 +58,6 @@ public class ProductService {
         products.add(product);
     }
 
-
     /**
      * Retrieves a product by its unique identifier.
      * Performs linear search among stored products.

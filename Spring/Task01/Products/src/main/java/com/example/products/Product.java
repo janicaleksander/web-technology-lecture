@@ -103,16 +103,12 @@ public class Product {
     /**
      * @param weight How much the product's mass is.
      */
-    public void setWeight(double weight) {
-        if (weight >= 0.0) this.weight = weight;
-    }
+    public void setWeight(double weight) { this.weight = weight;}
 
     /**
      * @param price How much the product costs.
      */
-    public void setPrice(double price) {
-        if (price >= 0.0) this.price = price;
-    }
+    public void setPrice(double price) { this.price = price;}
 
     /**
      * @param category Category that the product can be found under.
