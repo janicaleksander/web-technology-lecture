@@ -20,8 +20,8 @@ public class CategoryController {
 
     @GetMapping()
     public String getCategory(Model model){
-        List<Category> category  = categoryService.getAllCategories();
-        model.addAttribute("categories",category);
+        List<Category> categories  = categoryService.getAllCategories();
+        model.addAttribute("categories",categories);
         return "categories-list";
     }
     @GetMapping("/new")
@@ -39,7 +39,7 @@ public class CategoryController {
             return "categories-new";
         }
         categoryService.createCategory(category);
-        redirectAttributes.addFlashAttribute("success","Kategoria dodana pomyślnie!");
+        redirectAttributes.addFlashAttribute("success","Category " + category.getName() + " added!");
         return "redirect:/category";
     }
 
@@ -63,7 +63,7 @@ public class CategoryController {
             return "categories-edit";
         }
         categoryService.updateCategory(category);
-        redirectAttributes.addFlashAttribute("success","Kategoria edytowania pomyślnie");
+        redirectAttributes.addFlashAttribute("success","Category " + category.getName() + " edited!");
         return "redirect:/category";
     }
     @PostMapping("/delete/{id}")
@@ -72,7 +72,7 @@ public class CategoryController {
             RedirectAttributes redirectAttributes
     ){
         categoryService.deleteCategoryById(id);
-        redirectAttributes.addFlashAttribute("success","Poprawnie usunięto kategorie");
+        redirectAttributes.addFlashAttribute("success","Category deleted!");
         return "redirect:/category";
     }
 

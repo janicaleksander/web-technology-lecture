@@ -45,13 +45,17 @@ public class ProductController {
     public String newProduct(
             @Valid @ModelAttribute Product product,
             BindingResult result,
+            Model model,
+
             RedirectAttributes redirectAttributes
     ){
         if(result.hasErrors()){
+            model.addAttribute("categories", productService.getAllCategories()); // <-- dodajemy listę
             return "products-new";
+
         }
         productService.createProduct(product);
-        redirectAttributes.addFlashAttribute("success","Produkt dodany pomyślnie!");
+        redirectAttributes.addFlashAttribute("success","Product " + product.getName() + " added!");
         return "redirect:/product";
     }
 
@@ -71,17 +75,16 @@ public class ProductController {
     public String editProductForm(
             @Valid @ModelAttribute Product product,
             BindingResult result,
+            Model model,
             RedirectAttributes redirectAttributes
-
     ){
         if (result.hasErrors()){
+            model.addAttribute("categories", productService.getAllCategories());
             return "products-edit";
         }
         productService.updateProduct(product);
-        redirectAttributes.addFlashAttribute("success","Poprawnie edytowano produkt");
+        redirectAttributes.addFlashAttribute("success","Product " + product.getName() + " edited!");
         return "redirect:/product";
-
-
     }
 
     @PostMapping("/delete/{id}")
@@ -90,7 +93,7 @@ public class ProductController {
             RedirectAttributes redirectAttributes
     ){
         productService.deleteProduct(id);
-        redirectAttributes.addFlashAttribute("success","Poprawnie usunięto produkt");
+        redirectAttributes.addFlashAttribute("success","Product deleted");
         return "redirect:/product";
     }
 }

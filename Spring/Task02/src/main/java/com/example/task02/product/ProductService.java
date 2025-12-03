@@ -48,7 +48,7 @@ public class ProductService {
     @Transactional
     public Product updateProduct(Product p ){
         if (!categoryRepository.existsByName(p.getCategory().getName())){
-            throw new BusinessException("New category in product does not exists");
+            throw new BusinessException("New category you are trying to assign to product does not exists");
         }
         Product productToUpdate = productRepository.findById(p.getId())
                 .orElseThrow(() -> new BusinessException("Product with id " + p.getId() + " does not exists"));

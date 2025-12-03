@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
     }
     @ExceptionHandler(Exception.class)
     public String handleGenericException(Exception ex, Model model) {
-        model.addAttribute("exceptionError", "Wystąpił nieoczekiwany błąd: " + ex.getMessage());
+        model.addAttribute("exceptionError", "Unexpected error: " + ex.getMessage());
         return "error";
     }
 }
