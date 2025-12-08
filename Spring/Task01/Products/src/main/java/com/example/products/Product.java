@@ -2,8 +2,8 @@
  * *****************************************************************************
  * @file           : Product.java
  * @author         : Alex Rogoziński
- * @brief          : This file contains class representing a product with all 
- *                   required data. 
+ * @brief          : This file contains class representing a product with all
+ *                   required data.
  * *****************************************************************************
  */
 
@@ -11,7 +11,7 @@ package com.example.products;
 
 /**
  * Class representing a shop product.
- * 
+ *
  * @author  Alex Rogoziński
  * @version 1.0
  */
@@ -21,6 +21,7 @@ public class Product {
     private double weight;
     private double price;
     private String category;
+    private int productIdx;
 
     // -------------------------------------------------------------------------
     // Constructors
@@ -34,19 +35,21 @@ public class Product {
     /**
      * Parametrized constructor. Creates a Product object with fields
      * initialized with given values.
-     * 
-     * @param  id       Product's unique identifier.
-     * @param  name     Product's name.
-     * @param  weight   Product's weight in kilograms.
-     * @param  price    Product's price in PLN.
-     * @param  category Product's category.
+     *
+     * @param  id              Product's unique identifier.
+     * @param  name            Product's name.
+     * @param  weight          Product's weight in kilograms.
+     * @param  price           Product's price in PLN.
+     * @param  category        Product's category.
+     * @param  indeksProduktu  Product's index number.
      */
-    public Product(long id, String name, double weight, double price, String category) {
+    public Product(long id, String name, double weight, double price, String category, int indeksProduktu) {
         setId(id);
         setName(name);
         setWeight(weight);
         setPrice(price);
         setCategory(category);
+        setProductIdx(indeksProduktu);
     }
 
     // -------------------------------------------------------------------------
@@ -78,6 +81,11 @@ public class Product {
      */
     public String getCategory() { return category; }
 
+    /**
+     * @return An integer value of product's index.
+     */
+    public int getProductIdx() { return productIdx; }
+
     // -------------------------------------------------------------------------
     // Setters
     // -------------------------------------------------------------------------
@@ -95,15 +103,20 @@ public class Product {
     /**
      * @param weight How much the product's mass is.
      */
-    public void setWeight(double weight) { this.weight = weight; }
+    public void setWeight(double weight) { this.weight = weight;}
 
     /**
      * @param price How much the product costs.
      */
-    public void setPrice(double price) { this.price = price; }
+    public void setPrice(double price) { this.price = price;}
 
     /**
      * @param category Category that the product can be found under.
      */
     public void setCategory(String category) { this.category = category; }
+
+    /**
+     * @param productIdx Product's index number.
+     */
+    public void setProductIdx(int productIdx) { this.productIdx = productIdx; }
 }

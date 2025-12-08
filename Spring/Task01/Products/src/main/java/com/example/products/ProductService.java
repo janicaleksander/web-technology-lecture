@@ -43,8 +43,8 @@ public class ProductService {
      * Adds two default demonstrative products to the list.
      */
     public void seedProducts() {
-        products.add(new Product(getNextId(), "Chleb", 1.0, 5.2, "pieczywo"));
-        products.add(new Product(getNextId(), "Masło", 0.25, 7.0, "nabiał"));
+        products.add(new Product(getNextId(), "Chleb", 1.0, 5.2, "pieczywo",567609867));
+        products.add(new Product(getNextId(), "Masło", 0.25, 7.0, "nabiał",567654567));
     }
 
     /**
@@ -57,7 +57,6 @@ public class ProductService {
         product.setId(getNextId());
         products.add(product);
     }
-
 
     /**
      * Retrieves a product by its unique identifier.
