@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <title>Błąd</title>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Błąd!</h4>
+        <p th:text="${exceptionError}">Wystąpił nieoczekiwany błąd</p>
+        <p th:if="${errorCode}" th:text="'Kod błędu: ' + ${errorCode}"></p>
+        <hr>
+        <a href="/product" class="btn btn-primary">Wróć do strony głównej</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Produkty - lista</title>
+</head>
+<body class="container mt-4">
+<div th:replace="fragement/nav :: nav"></div>
+
+<div th:if="${success}" class="alert alert-success" role="alert">
+    <p th:text="${success}"></p>
+</div>
+<div th:if="${exceptionError}" class="alert alert-danger" role="alert">
+    <p th:text="${exceptionError}"></p>
+</div>
+
+<h1>Lista dostępnych produktów</h1>
+<a class="btn btn-success mb-3" th:href="@{/product/new}"> Dodaj nowy produkt </a>
+
+<div class="content">
+    <table class="table table-bordered">
+        <thead class="thead-light text-center">
+        <tr>
+            <th class="text-right">ID</th>
+            <th class="text-left">NAZWA</th>
+            <th class="text-left">WAGA [kg]</th>
+            <th class="text-left">CENA [zł]</th>
+            <th class="text-left">Indeks</th>
+            <th class="text-left">Kategoria</th>
+            <th class="text-center" colspan="3">AKCJE</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td class="text-right" th:text="${product.id}"></td>
+                <td class="text-left" th:text="${product.name}"></td>
+                <td class="text-left" th:text="${product.weight}"></td>
+                <td class="text-left" th:text="${product.price}"></td>
+                <td class="text-left" th:text="${product.productIdx}"></td>
+                <td class="text-left" th:text="${product.category.name}"></td>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-primary" th:href="@{/product/{id}(id=${product.id})}"> Szczegóły </a>
+                </td>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-primary" th:href="@{/product/edit/{id}(id=${product.id})}"> Edytuj </a>
+                </td>
+                <td class="text-center">
+                    <form th:action="@{/product/delete/{id}(id=${product.id})}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Do you want to really delete it?')">
+                            Usuń
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
