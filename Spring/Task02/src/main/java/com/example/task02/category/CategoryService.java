@@ -18,10 +18,10 @@ public class CategoryService {
     @Transactional
     public Category createCategory(Category c){
         if (categoryRepository.existsByName(c.getName())){
-            throw new BusinessException("Product with name " + c.getName() + " does exists");
+            throw new BusinessException("Category with name " + c.getName() + " does exists");
         }
         if (categoryRepository.existsByCode(c.getCode())){
-            throw new BusinessException("Product with code " + c.getCode() + " does exists");
+            throw new BusinessException("Category with code " + c.getCode() + " does exists");
         }
         Category category = Category.builder()
                 .name(c.getName())

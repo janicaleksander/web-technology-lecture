@@ -42,6 +42,7 @@
                 th:field="*{weight}"
                 class="form-control"
                 th:classappend="${#fields.hasErrors('weight')} ? 'is-invalid' : ''"
+                min="0"
         >
         <div class="invalid-feedback" th:if="${#fields.hasErrors('weight')}"
              th:errors="*{weight}">
@@ -61,6 +62,8 @@
                 th:field="*{price}"
                 class="form-control"
                 th:classappend="${#fields.hasErrors('price')} ? 'is-invalid' : ''"
+
+                min="0"
         >
         <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}"
              th:errors="*{price}">
@@ -77,6 +80,7 @@
                 th:field="*{productIdx}"
                 class="form-control"
                 th:classappend="${#fields.hasErrors('productIdx')} ? 'is-invalid' : ''"
+                min="0"
         >
         <div class="invalid-feedback" th:if="${#fields.hasErrors('productIdx')}"
              th:errors="*{productIdx}">

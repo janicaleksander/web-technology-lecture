@@ -50,7 +50,7 @@ public class ProductController {
             RedirectAttributes redirectAttributes
     ){
         if(result.hasErrors()){
-            model.addAttribute("categories", productService.getAllCategories()); // <-- dodajemy listę
+            model.addAttribute("categories", productService.getAllCategories());
             return "products-new";
 
         }
