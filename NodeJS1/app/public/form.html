@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZWIERZAKI</title>
+    <style>
+        .container{
+            display: flex;
+            gap: 100px;
+        }
+    </style>
+</head>
+
+<body>
+<nav>
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/list">DANE W TABELI</a></li>
+
+    </ul>
+</nav>
+<h2>FORMULARZ REJESTRACJI WŁAŚCICIELI I ICH ZWIERZAKÓW</h2>
+
+<form action="/add" method="post">
+    <div class="container">
+        <div class="column">
+            <label for="name">Imię właściciela:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="lastname">Nazwisko właściciela:</label><br>
+            <input type="text" id="lastname" name="lastname" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="birthdate">Data urodzenia</label><br>
+            <input type="date" id="birthdate" name="birthdate" required><br><br>
+        </div>
+
+        <div class="column">
+            <label for="nickname">Pseudonim zwierzaka</label><br>
+            <input type="text" id="nickname" name="nickname" required><br><br>
+
+
+            <label for="tricks">Czy potrafi sztuczki?</label><br>
+            <input type="checkbox" id="tricks" name="tricks"><br><br>
+        </div>
+
+    </div>
+    <input type="submit" value="WYŚLIJ">
+</form>
+
+<button><a href="/export-users">LISTA DANYCH WLASCICIELI</a></button>
+<button><a href="/export-animals">LISTA DANYCH ZWIERZAT</a></button>
+</body>
+</html>
+<!---!>
+//ctrl alt m - pretty json
