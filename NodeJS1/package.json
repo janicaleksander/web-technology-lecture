@@ -1,0 +1,13 @@
+{
+  "name": "express-pg-promise",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "pg-promise": "^12.3.0"
+  }
+}
