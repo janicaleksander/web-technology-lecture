@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const crypto = require('crypto');
+const fs = require('fs');
 
 const db = require('./db');
 const {user} = require("./config/db.config");
@@ -91,32 +92,79 @@ app.get('/list', async (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LISTA DANYCH</title>
-    <style>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f7fa;
+        margin: 0;
+        padding: 0;
+    }
 
-    
+    nav {
+        background: #2c3e50;
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 30px 0;
+        color: #333;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto 40px;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
     table {
+        width: 100%;
         border-collapse: collapse;
-        min-width: 360px;
-        font-size: 13px;        
+        margin-bottom: 40px;
+        font-size: 14px;
     }
-    
+
     th, td {
-        border: 1px solid #ccc;
-        padding: 4px 8px;      
+        border: 1px solid #ddd;
+        padding: 8px 12px;
         text-align: left;
-        white-space: nowrap;  
     }
-    
+
     th {
-        background: #f2f2f2;
+        background-color: #ecf0f1;
         font-weight: 600;
     }
 
     tr:nth-child(even) {
-        background: #fafafa;
+        background-color: #fafafa;
     }
 
-    </style>
+    tr:hover {
+        background-color: #f1f7ff;
+    }
+</style>
+
 </head>
 
 <body>
@@ -170,21 +218,31 @@ app.get('/list', async (req, res) => {
 
     }
 });
-
 app.get('/export-users', async (req, res) => {
     try {
-        const usersRows = await db.any(`SELECT * FROM users`)
+        const usersRows = await db.any(`SELECT * FROM users`);
+
+        fs.writeFileSync(
+            'users.json',
+            JSON.stringify(usersRows, null, 2)
+        );
+
         res.setHeader('Content-Type','application/json');
-        res.setHeader('Content-Disposition','attachment; filename="users.json"')
-        res.send(JSON.stringify(usersRows))
+        res.setHeader('Content-Disposition','attachment; filename="users.json"');
+        res.send(JSON.stringify(usersRows));
+
     } catch (err) {
-        console.log(err);
         res.status(500).json({ error: 'database error' });
     }
 });
+
 app.get('/export-animals', async (req, res) => {
     try {
         const animalsRows = await db.any(`SELECT * FROM animals`)
+        fs.writeFileSync(
+            'animalsRows.json',
+            JSON.stringify(animalsRows, null, 2)
+        );
         res.setHeader('Content-Type','application/json');
         res.setHeader('Content-Disposition','attachment; filename="animals.json"')
         res.send(JSON.stringify(animalsRows))
