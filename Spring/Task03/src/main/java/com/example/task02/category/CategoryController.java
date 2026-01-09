@@ -1,0 +1,80 @@
+package com.example.task02.category;
+
+import jakarta.validation.Valid;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
+
+@Controller
+@RequestMapping("/categories")
+public class CategoryController {
+    public final CategoryService categoryService;
+
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
+
+    @GetMapping()
+    public String getCategory(Model model){
+        List<Category> categories  = categoryService.getAllCategories();
+        model.addAttribute("categories",categories);
+        return "categories-list";
+    }
+    @GetMapping("/new")
+    public String newCategoryForm(Model model){
+        model.addAttribute("category", new Category());
+        return "categories-new";
+    }
+    @PostMapping("/new")
+    public String newCategory(
+            @Valid @ModelAttribute Category category,
+            BindingResult result,
+            RedirectAttributes redirectAttributes
+    ){
+        if (result.hasErrors()){
+            return "categories-new";
+        }
+        categoryService.createCategory(category);
+        redirectAttributes.addFlashAttribute("success","Kategoria " + category.getName() + " dodana!");
+        return "redirect:/category";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editCategoryForm(
+            @PathVariable Integer id,
+            Model model
+    ){
+        Category c = categoryService.getCategoryById(id);
+        model.addAttribute("category",c);
+        return "categories-edit";
+
+    }
+    @PostMapping("/edit/{id}")
+    public String editCategory(
+            @Valid @ModelAttribute Category category,
+            BindingResult result,
+            RedirectAttributes redirectAttributes
+    ){
+        if (result.hasErrors()){
+            return "categories-edit";
+        }
+        categoryService.updateCategory(category);
+        redirectAttributes.addFlashAttribute("success","Kategoria " + category.getName() + " edytowana!");
+        return "redirect:/category";
+    }
+    @PostMapping("/delete/{id}")
+    public String deleteCategory(
+            @PathVariable Integer id,
+            RedirectAttributes redirectAttributes
+    ){
+        categoryService.deleteCategoryById(id);
+        redirectAttributes.addFlashAttribute("success","Kategoria usunięta!");
+        return "redirect:/category";
+    }
+
+
+}

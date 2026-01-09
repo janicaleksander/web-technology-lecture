@@ -8,7 +8,7 @@
     <title>Produkty - lista</title>
 </head>
 <body class="container mt-4">
-<div th:replace="fragement/nav :: nav"></div>
+<div th:replace="~{fragment/nav :: nav}"></div>
 
 <div th:if="${success}" class="alert alert-success" role="alert">
     <p th:text="${success}"></p>
@@ -18,7 +18,7 @@
 </div>
 
 <h1>Lista dostępnych produktów</h1>
-<a class="btn btn-success mb-3" th:href="@{/product/new}">Dodaj nowy produkt </a>
+<a class="btn btn-success mb-3" th:href="@{/product/new}"> Dodaj nowy produkt </a>
 
 <div class="content">
     <table class="table table-bordered">
