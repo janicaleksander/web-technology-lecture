@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Moje konto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+    <div th:replace="~{fragment/nav :: nav}"></div>
+    
+    <div class="text-center mt-5">
+        <h1 class="display-3">Witaj, <span sec:authentication="name">Użytkownik</span>!</h1>
+        <p class="lead mt-4">Rola: <span sec:authentication="principal.authorities">Rola</span></p>
+    </div>
+</body>
+</html>

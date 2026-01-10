@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <title>Logowanie</title>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Logowanie</h2>
+                        
+                        <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                            Niewłaściwa nazwa użytkownika lub hasło.
+                        </div>
+                        
+                        <div th:if="${param.logout}" class="alert alert-success" role="alert">
+                            Zostałeś pomyślnie wylogowany.
+                        </div>
+                        
+                        <div th:if="${success}" class="alert alert-success" role="alert" th:text="${success}"></div>
+                        
+                        <form th:action="@{/login}" method="post">
+                            <div class="form-group">
+                                <label for="username">Nazwa użytkownika:</label>
+                                <input type="text" id="username" name="username" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Hasło:</label>
+                                <input type="password" id="password" name="password" class="form-control" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">Zaloguj się</button>
+                        </form>
+                        
+                        <div class="text-center mt-3">
+                            <p>Nie masz konta? <a th:href="@{/register}">Zarejestruj się tutaj</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
