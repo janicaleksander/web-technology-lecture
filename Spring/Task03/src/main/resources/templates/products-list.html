@@ -48,7 +48,7 @@
                     <a class="btn btn-sm btn-primary" th:href="@{/product/edit/{id}(id=${product.id})}"> Edytuj </a>
                 </td>
                 <td class="text-center">
-                    <form th:action="@{/product/delete/{id}(id=${product.id})}" method="post" style="display:inline;">
+                    <form th:action="@{/product/delete/{id}(id=${product.id})}" method="post" class="d-inline">
                         <button type="submit" class="btn btn-sm btn-danger"
                                 onclick="return confirm('Do you want to really delete it?')">
                             Usuń

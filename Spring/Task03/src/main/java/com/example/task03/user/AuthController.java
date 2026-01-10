@@ -1,4 +1,4 @@
-package com.example.task02.user;
+package com.example.task03.user;
 
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;

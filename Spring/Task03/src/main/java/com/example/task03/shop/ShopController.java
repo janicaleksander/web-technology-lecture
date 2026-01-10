@@ -1,15 +1,16 @@
-package com.example.task02.shop;
+package com.example.task03.shop;
 
-import com.example.task02.cart.CartItem;
-import com.example.task02.cart.CartService;
-import com.example.task02.product.Product;
-import com.example.task02.product.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.example.task03.cart.CartItem;
+import com.example.task03.cart.CartService;
+import com.example.task03.product.Product;
+import com.example.task03.product.ProductService;
 
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class ShopController {
             );
             cartService.addToCart(request, response, cartItem);
             redirectAttributes.addFlashAttribute("success", 
-                    product.getName() + " dodano do koszyka!");
+                    "Dodano do koszyka: " + product.getName());
         } 
         catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", 

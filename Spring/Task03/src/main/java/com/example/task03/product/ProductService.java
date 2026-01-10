@@ -1,12 +1,13 @@
-package com.example.task02.product;
+package com.example.task03.product;
 
 
-import com.example.task02.exception.BusinessException;
-import com.example.task02.category.Category;
-import com.example.task02.category.CategoryRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
+import com.example.task03.category.Category;
+import com.example.task03.category.CategoryRepository;
+import com.example.task03.exception.BusinessException;
 
 import java.util.List;
 
@@ -28,13 +29,7 @@ public class ProductService {
         Category category = categoryRepository.findById(p.getCategory().getId())
                 .orElseThrow(() -> new BusinessException("Can't find category with " + p.getCategory().getName() + " name"));
 
-        Product product = Product.builder()
-                .name(p.getName())
-                .weight(p.getWeight())
-                .price(p.getPrice())
-                .productIdx(p.getProductIdx())
-                .category(category)
-                .build();
+        Product product = new Product(null, p.getName(), p.getWeight(), p.getPrice(), p.getProductIdx(), category);
         return productRepository.save(product);
     }
 
@@ -83,28 +78,9 @@ public class ProductService {
                 !productRepository.existsById(2) &&
                 !productRepository.existsById(3)
         ){
-            Product p1 = Product.builder()
-                    .name("banan")
-                    .weight(0.5f)
-                    .price(2)
-                    .productIdx(123456789)
-                    .category(new Category(1,"owoce","K1"))
-                    .build();
-            Product p2 = Product.builder()
-                    .name("pomidor")
-                    .weight(0.3f)
-                    .price(4)
-                    .productIdx(543567876)
-                    .category(new Category(2,"warzywa","K2"))
-                    .build();
-
-            Product p3 = Product.builder()
-                    .name("czekolada")
-                    .weight(0.5)
-                    .price(10f)
-                    .productIdx(123666777)
-                    .category(new Category(3,"slodycze","K3"))
-                    .build();
+            Product p1 = new Product(null, "banan", 0.5f, 2, 123456789, new Category(1, "owoce", "K1"));
+            Product p2 = new Product(null, "pomidor", 0.3f, 4, 543567876, new Category(2, "warzywa", "K2"));
+            Product p3 = new Product(null, "czekolada", 0.5, 10f, 123666777, new Category(3, "slodycze", "K3"));
 
             productRepository.saveAll(List.of(p1,p2,p3));
 

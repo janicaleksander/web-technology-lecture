@@ -1,14 +1,12 @@
-package com.example.task02.category;
+package com.example.task03.category;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Builder;
 
 import java.util.Objects;
 @Entity
 @Table(name = "kategoria")
-@Builder
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

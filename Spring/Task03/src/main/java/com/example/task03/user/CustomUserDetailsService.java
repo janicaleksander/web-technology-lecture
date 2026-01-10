@@ -1,4 +1,4 @@
-package com.example.task02.user;
+package com.example.task03.user;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

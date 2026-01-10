@@ -1,8 +1,9 @@
-package com.example.task02.cart;
+package com.example.task03.cart;
 
-import com.example.task02.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.example.task03.user.User;
 
 import java.util.List;
 import java.util.Optional;

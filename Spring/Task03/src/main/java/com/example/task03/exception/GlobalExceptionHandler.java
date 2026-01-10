@@ -1,4 +1,4 @@
-package com.example.task02.exception;
+package com.example.task03.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.ui.Model;

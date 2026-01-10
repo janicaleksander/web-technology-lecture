@@ -42,15 +42,14 @@
                 <form th:action="@{/cart/update/{productId}(productId=${item.productId})}" 
                       method="post" class="form-inline justify-content-center">
                     <input type="number" name="quantity" th:value="${item.quantity}" 
-                           min="1" max="99" class="form-control form-control-sm" 
-                           style="width: 70px; margin-right: 5px;">
+                           min="1" max="99" class="form-control form-control-sm mr-1" style="width: 70px;">
                     <button type="submit" class="btn btn-sm btn-primary">Zatwierdź</button>
                 </form>
             </td>
             <td class="text-right" th:text="${#numbers.formatDecimal(item.subtotal, 1, 2)} + ' zł'">0.00 zł</td>
             <td class="text-center">
                 <form th:action="@{/cart/remove/{productId}(productId=${item.productId})}" 
-                      method="post" style="display: inline;">
+                      method="post" class="d-inline">
                     <button type="submit" class="btn btn-sm btn-danger" 
                             onclick="return confirm('Czy na pewno chcesz usunąć ten produkt z koszyka?')">
                         Usuń
@@ -70,7 +69,7 @@
 
     <div class="mt-3">
         <a th:href="@{/shop}" class="btn btn-secondary">Kontynuuj zakupy</a>
-        <form th:action="@{/cart/clear}" method="post" style="display: inline;">
+        <form th:action="@{/cart/clear}" method="post" class="d-inline">
             <button type="submit" class="btn btn-warning" 
                     onclick="return confirm('Czy na pewno chcesz wyczyścić cały koszyk?')">
                 Wyczyść koszyk

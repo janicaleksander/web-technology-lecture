@@ -1,4 +1,4 @@
-package com.example.task02.exception;
+package com.example.task03.exception;
 
 public class BusinessException extends RuntimeException {
     public BusinessException(String message) {

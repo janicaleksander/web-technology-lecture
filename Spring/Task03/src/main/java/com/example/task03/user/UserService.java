@@ -1,4 +1,4 @@
-package com.example.task02.user;
+package com.example.task03.user;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

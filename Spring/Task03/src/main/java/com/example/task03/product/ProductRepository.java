@@ -1,4 +1,4 @@
-package com.example.task02.product;
+package com.example.task03.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

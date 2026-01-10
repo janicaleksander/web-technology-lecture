@@ -1,12 +1,13 @@
-package com.example.task02.category;
+package com.example.task03.category;
 
 
-import com.example.task02.exception.BusinessException;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
+import com.example.task03.exception.BusinessException;
 
 import java.util.List;
 
@@ -23,10 +24,7 @@ public class CategoryService {
         if (categoryRepository.existsByCode(c.getCode())){
             throw new BusinessException("Category with code " + c.getCode() + " does exists");
         }
-        Category category = Category.builder()
-                .name(c.getName())
-                .code(c.getCode())
-                .build();
+        Category category = new Category(null, c.getName(), c.getCode());
         return categoryRepository.save(category);
     }
     public Category getCategoryById(Integer id){
@@ -79,18 +77,9 @@ public class CategoryService {
                 && !categoryRepository.existsByCode("K2")
                 && !categoryRepository.existsByCode("K3"))
         {
-            Category c1 = Category.builder()
-                    .name("owoce")
-                    .code("K1")
-                    .build();
-            Category c2 = Category.builder()
-                    .name("warzywa")
-                    .code("K2")
-                    .build();
-            Category c3 = Category.builder()
-                    .name("slodycze")
-                    .code("K3")
-                    .build();
+            Category c1 = new Category(null, "owoce", "K1");
+            Category c2 = new Category(null, "warzywa", "K2");
+            Category c3 = new Category(null, "slodycze", "K3");
             categoryRepository.saveAll(List.of(c1,c2,c3));
         }
 

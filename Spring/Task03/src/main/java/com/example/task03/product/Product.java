@@ -1,13 +1,12 @@
-package com.example.task02.product;
+package com.example.task03.product;
 
-import com.example.task02.category.Category;
+import com.example.task03.category.Category;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.Builder;
 
 @Entity
 @Table(name = "produkt")
-@Builder
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
