@@ -4,7 +4,7 @@ function StudentSubjectsList(){
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState({
         name: "",
-        duration: 0
+        duration: ""
     });
 
     const downloadFile = ({ data, fileName, fileType }) => {
@@ -46,16 +46,24 @@ function StudentSubjectsList(){
         }));
     }
 
-    function addTask(){
-        if (newTask.name.trim()!== "" && newTask.duration > 0){
-            setTasks(t =>[...t, newTask]);
-            setNewTask((prevTask)=>({
-                ...prevTask,
-                name: "",
-                duration: 0
-            }));
-        }
-    }
+function addTask() {
+    const name = newTask.name.trim();
+    const durationStr = newTask.duration;
+    if (name === "") return;
+
+    if (!/^[0-9]+$/.test(durationStr)) return;
+
+    if (durationStr.startsWith("0")) return;
+    const duration = Number(durationStr);
+
+    if (!Number.isInteger(duration) || duration <= 0) return;
+    setTasks(t => [...t, { name, duration }]);
+    setNewTask({
+        name: "",
+        duration: ""
+    });
+}
+
     function deleteTask(index){
         const updatedTasks = tasks.filter((_, i)=> i!==index);  //i to indeks elementu, ale żeby nie było konfliktu nazw
         setTasks(updatedTasks);
