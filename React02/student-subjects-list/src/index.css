@@ -1,0 +1,165 @@
+/* ===== Global ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Container ===== */
+.subjects-list {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.subjects-list h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #1f2933;
+}
+
+/* ===== Input Section ===== */
+.subjects-list > div {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+input[type="text"],
+input[type="number"] {
+  flex: 1;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* ===== Buttons ===== */
+button {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.3s ease;
+  color: #ffffff;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.add-button{
+  background-color: #22c55e;
+}
+
+.add-button:hover{
+  background-color: #16a34a;
+}
+.to-json-button{
+  background-color: #22c55e;
+}
+
+.to-json-button{
+  background-color: #16a34a;
+}
+
+.delete-button {
+  background-color: #ef4444;
+}
+
+.delete-button:hover {
+  background-color: #dc2626;
+}
+
+.move-button {
+  background-color: #3b82f6;
+}
+
+.move-button:hover {
+  background-color: #2563eb;
+}
+
+/* ===== List ===== */
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== List Item (Card) ===== */
+li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 15px;
+  align-items: center;
+  padding: 18px;
+  margin-bottom: 15px;
+  background: #f9fafb;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Subject info */
+li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+li h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.subject-name {
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.subject-duration {
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* ===== Action buttons ===== */
+li button {
+  margin-left: 6px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .subjects-list > div {
+    flex-direction: column;
+  }
+
+  li {
+    grid-template-columns: 1fr;
+  }
+
+  li button {
+    width: 100%;
+    margin: 4px 0;
+  }
+}
